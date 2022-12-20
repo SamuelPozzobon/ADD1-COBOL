@@ -1,0 +1,37 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. ADD1.
+       
+       ENVIRONMENT DIVISION.
+       DATA DIVISION.
+       
+       WORKING-STORAGE SECTION.
+           WORKING-STORAGE SECTION.
+                  01 N PIC 9(5)V99.
+                  01 RESULT PIC 9(5)V99.
+                  01 DONE PIC X(3).
+       CONFIGURATION SECTION.
+       SPECIAL-NAMES.
+           DECIMAL-POINT IS COMMA.
+       
+       PROCEDURE DIVISION
+       
+       MOVE 0                          TO RESULT
+       
+       PERFORM UNTIL DONE = "N"
+       ACCEPT N
+       ADD N TO RESULT
+       DISPLAY "insert another number? (Y/N)"
+       ACCEPT DONE
+       
+       IF DONE = "Y" THEN
+         
+         MOVE "N"                      TO DONE
+       
+       END-IF
+       END-PERFORM
+       
+       DISPLAY "The result is: " RESULT.
+       STOP RUN.
+       
+       END PROGRAM ADD1.
+       
